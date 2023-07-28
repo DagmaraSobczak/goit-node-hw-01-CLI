@@ -1,0 +1,16 @@
+{
+  "name": "goit-node-hw-01-cli",
+  "version": "1.0.0",
+  "homepage": "https://github.com/DagmaraSobczak/goit-node-hw-01-CLI",
+  "main": "index.cjs",
+  "scripts": {
+    "start": "node index.cjs",
+    "start:dev": "nodemon index.cjs"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "commander": "^11.0.0"
+  }
+}
