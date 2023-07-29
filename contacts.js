@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require("fs").promises;
 const path = require("path");
 const { nanoid } = require("nanoid");
 
@@ -6,10 +6,11 @@ const contactsPath = path.join(__dirname, "db/contacts.json");
 
 async function listContacts() {
   try {
-    const data = await fs.readFile(contactsPath, "utf8");
-    return JSON.parse(data);
+    const data = await fs.readFile(contactsPath, { encoding: "utf8" });
+    const contacts = JSON.parse(data);
+    return contacts;
   } catch (error) {
-    console.error("error", error);
+    console.error("Błąd podczas odczytu kontaktów:", error);
     return [];
   }
 }
